@@ -1,0 +1,63 @@
+.review{
+    position: absolute;
+    left: 700px;
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 25px;
+    height: 700px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial Black', Gadget, sans-serif;
+}
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    overflow: scroll;
+    margin-bottom: 10px;
+}
+
+.print_comment form{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+}
+
+textarea{
+    outline: none;
+    height: 100px;
+    width: 100%;
+    overflow: scroll;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(240, 239, 239);
+    font-size: 16px;
+    resize: none;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+label{
+    display: none;
+}
+
+#review_btn{
+    border: none;
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    align-self: flex-end;
+    color: white;
+    background-color: green;
+}
+
+#review_btn:hover{
+    color:black;
+    background-color: white;
+    border: 2px solid orangered;
+    transition: 1s;
+    font-weight: bold;
+}

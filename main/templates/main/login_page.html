@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Войти</title>
+    <link rel="stylesheet" href="{% static 'main/login.css' %}"/>
+</head>
+<body>
+    <form class="login" autocomplete="off" method="post">
+        <h3>Войти</h3>
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" class="submit" value="Войти"/>
+        <a href="/main/signup/">Нет аккаунта?</a>
+    </form>
+</body>
+</html>

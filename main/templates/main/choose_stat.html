@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Туры</title>
+    <link rel="stylesheet" href="{% static 'main/header.css' %}"/>
+    <link rel="stylesheet" href="{% static 'main/footer.css' %}"/>
+    <link rel="stylesheet" href="{% static 'main/tours.css' %}"/>
+</head>
+<body>
+    <header>
+        <button id="main_btn" onclick="window.location.href='/main'">На главную</button>
+        <button id="tours_btn" onclick="window.location.href='/main/tours/'">Туры</button>
+        <button id="profile_btn" onclick="window.location.href='/main/profile/'">Профиль</button>
+        <button id="stats_btn" onclick="window.location.href='/main/stat/'">Статистика</button>
+    </header>
+
+    <div class="sidenav">
+        <h5>Статистика по турам</h5>
+        {% for tour in tours %}
+            <a href="/main/stat/{{ tour.country }}">{{ tour.country }}</a>
+        {% endfor %}
+    </div>
+
+    <footer>
+        <div style="text-align: center;"><p>Кравченко Богдан, Университет ИТМО, 2024</p></div>
+    </footer>
+</body>
+</html>

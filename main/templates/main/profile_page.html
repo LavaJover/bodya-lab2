@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="{% static 'main/header.css' %}"/>
+    <link rel="stylesheet" href="{% static 'main/footer.css' %}"/>
+    <link rel="stylesheet" href="{% static 'main/tours.css' %}"/>
+    <link rel="stylesheet" href="{% static 'main/profile.css' %}"/>
+</head>
+<body>
+    <header>
+        <button id="main_btn" onclick="window.location.href='/main'">На главную</button>
+        <button id="tours_btn" onclick="window.location.href='/main/tours/'">Туры</button>
+        <button id="profile_btn" onclick="window.location.href='/main/profile/'">Профиль</button>
+        <button id="stats_btn" onclick="window.location.href='/main/choose_stat/'">Статистика</button>
+    </header>
+
+    <div class="sidenav">
+        <h5>Настройки профиля</h5>
+        <button id="logout_btn" onclick="window.location.href='/main/login/'">Выйти</button>
+    </div>
+
+    <div class="info">
+        <p>Фамилия: {{ surname }}</p>
+        <p>Имя: {{ name }}</p>
+        <h3>Зарезервированные Туры</h3>
+        {% for res in reservation_list %}
+            <div class="tour">
+                <p>Страна: {{ res.tour.country }}</p>
+                <p>Город: {{ res.tour.city }}</p>
+                <p>Отправление: {{ res.tour.start_date }}</p>
+                <p>Окончание: {{ res.tour.end_date }}</p>
+                <p>Стоимость: {{ res.tour.price }}</p>
+                {% if not res.approved %}
+                    <p class='fail'>Не подтверждено</p>
+                {% else %}
+                    <p class='ok'>Одобрено</p>
+                {% endif %}
+                <button class="cancel" onclick="window.location.href='/main/tours/delete_reserve/{{ res.id }}'">Отменить</button>
+            </div>
+        {% endfor %}
+    </div>
+
+    <footer>
+        <div style="text-align: center;"><p>Кравченко Богдан, Университет ИТМО, 2024</p></div>
+    </footer>
+</body>
+</html>

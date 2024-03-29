@@ -1,0 +1,33 @@
+header{
+    border: 2px solid orangered;
+    border-radius: 25px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: blue;
+    padding: 10px;
+}
+
+header > button{
+    border:none;
+    color: white;
+    background-color: blue;
+    height: 70px;
+    width: 100px;
+    margin-right: 20px;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-weight: bold;
+}
+
+header > button:hover{ 
+    background-color:white;
+    color: black;
+    transition: 1s;
+    border-radius: 50%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+body{
+    background-color: blue;
+}

@@ -1,0 +1,26 @@
+.sidenav{
+    position: fixed;
+    background-color: blue;
+    border: 2px solid black;
+    border-radius: 25px;
+    left: 0px;
+    margin-top: 10px;
+    margin-left: 7px;
+    width: 200px;
+    min-height: 700px;
+    padding: 10px;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenav a{
+    text-decoration: none;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.sidenav a:hover{
+    font-weight: bolder;
+}
